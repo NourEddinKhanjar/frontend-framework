@@ -1,0 +1,17 @@
+{
+  "name": "frontend-framework",
+  "version": "1.0.0",
+  "description": "This is my first frontend framework",
+  "main": "index.ts",
+  "scripts": {
+    "start": "tsc"
+  },
+  "author": "Nour Eddin Khanjar",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^3.2.2"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5"
+  }
+}

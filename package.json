@@ -18,13 +18,7 @@
   "author": "Nour Eddin Khanjar",
   "scripts": {
     "prebuild": "rimraf dist/*",
-    "build": "rollup -c",
-    "lint": "eslint src test/*.js",
-    "pretest": "npm run build",
-    "test": "mocha",
-    "posttest": "npm run lint",
-    "prepublishOnly": "npm run test",
-    "prepare": "npm run build"
+    "build": "rollup -c"
   },
   "dependencies": {
     "resolve": "^1.8.1",

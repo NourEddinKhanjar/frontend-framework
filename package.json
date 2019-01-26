@@ -2,14 +2,23 @@
   "name": "frontend-framework",
   "version": "1.0.0",
   "description": "This is my first frontend framework",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "scripts": {
-    "start": "tsc"
+    "type-check": "tsc --watch",
+    "build": "babel --presets @babel/preset-typescript src/index.ts --out-file dist/script.min.js"
   },
   "author": "Nour Eddin Khanjar",
   "license": "ISC",
   "devDependencies": {
-    "typescript": "^3.2.2"
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/plugin-proposal-decorators": "^7.3.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-typescript": "^7.1.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "babel-preset-minify": "^0.5.0",
+    "typescript": "^3.2.4"
   },
   "dependencies": {
     "@babel/polyfill": "^7.2.5"

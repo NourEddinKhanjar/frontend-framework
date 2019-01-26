@@ -1,26 +1,49 @@
 {
-  "name": "frontend-framework",
+  "name": "rollup-typescript",
   "version": "1.0.0",
-  "description": "This is my first frontend framework",
-  "main": "src/index.ts",
-  "scripts": {
-    "type-check": "tsc --watch",
-    "build": "babel --presets @babel/preset-typescript src/index.ts --out-file dist/script.min.js"
-  },
+  "description": "Rollup and TypeScript.",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "keywords": [
+    "rollup-plugin",
+    "typescript",
+    "es2015"
+  ],
+  "license": "MIT",
   "author": "Nour Eddin Khanjar",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.2.2",
-    "@babel/plugin-proposal-class-properties": "^7.3.0",
-    "@babel/plugin-proposal-decorators": "^7.3.0",
-    "@babel/preset-env": "^7.3.1",
-    "@babel/preset-typescript": "^7.1.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
-    "babel-preset-minify": "^0.5.0",
-    "typescript": "^3.2.4"
+  "scripts": {
+    "prebuild": "rimraf dist/*",
+    "build": "rollup -c",
+    "lint": "eslint src test/*.js",
+    "pretest": "npm run build",
+    "test": "mocha",
+    "posttest": "npm run lint",
+    "prepublishOnly": "npm run test",
+    "prepare": "npm run build"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.2.5"
+    "resolve": "^1.8.1",
+    "rollup-pluginutils": "^2.3.1"
+  },
+  "peerDependencies": {
+    "tslib": "*",
+    "typescript": ">=2.1.0"
+  },
+  "devDependencies": {
+    "buble": "^0.19.3",
+    "eslint": "^5.6.0",
+    "mocha": "^5.2.0",
+    "rimraf": "^2.5.4",
+    "rollup": "^0.65.2",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-typescript2": "^0.19.2",
+    "tslib": "^1.9.3",
+    "typescript": "^3.0.3"
   }
 }

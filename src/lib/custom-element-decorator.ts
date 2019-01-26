@@ -17,7 +17,7 @@ export const CustomElementDecorator = (config: CustomElementConfig) => (customEl
 
     customElement.prototype.onCreate = function() {
         const clone = document.importNode(templateElement.content, true);
-        this.attachShadow({mode: 'closed'}).appendChild(clone);
+        this.attachShadow({mode: 'open'}).appendChild(clone);
 
         onCreateEvent.call(this);
         if(this.onInit){

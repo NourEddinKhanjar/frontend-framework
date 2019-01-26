@@ -1,9 +1,8 @@
-import "@babel/polyfill";
 import {CustomElementDecorator} from "./lib/custom-element-decorator";
 
 @CustomElementDecorator({
     selector: 'my-name',
-    template: `<div>My name is {{name}}</div>`,
+    template: `<div>My name is Nour Eddin Khanjar</div>`,
     style: `:host {
       position: absolute;
       bottom: 0;
@@ -16,18 +15,9 @@ import {CustomElementDecorator} from "./lib/custom-element-decorator";
     }`
 })
 class MyName extends HTMLElement {
-    _name:string | null = null;
-
     constructor(){
         super();
-    }
-
-    get name():string | null {
-        if (!this._name) {
-            this._name = this.getAttribute("name");
-        }
-
-        return this._name;
+        this.onCreate();
     }
 
     onCreate():void{

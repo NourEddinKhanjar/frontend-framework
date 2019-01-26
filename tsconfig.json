@@ -1,17 +1,16 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es5",
-    "experimentalDecorators": true,
+    "declaration": true,
+    "declarationDir": "./dist",
+    "module": "es6",
+    "noImplicitAny": true,
     "outDir": "./dist",
-    "lib": [
-      "dom",
-      "es2015",
-      "es5",
-      "es6"
-    ]
+    "target": "es2015",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
-  "exclude": [
-    "node_modules"
-  ]
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": ["node_modules"]
 }
